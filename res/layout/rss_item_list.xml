@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
 
     <!-- Header -->
 
-    <include layout="@layout/header" />
+    <include layout="@layout/sub_header" />
 
     <ListView
         android:id="@android:id/list"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/layoutHeader"
+        android:layout_weight="1"
         android:background="#ffffff"
         android:cacheColorHint="#00000000"
         android:divider="#bababa"
         android:dividerHeight="1dp"
         android:listSelector="@drawable/list_selector" />
 
-</RelativeLayout>
+</LinearLayout>

@@ -41,7 +41,6 @@
         android:layout_width="2dp"
         android:layout_height="match_parent"
         android:layout_marginBottom="5dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="5dp"
         android:layout_toLeftOf="@id/btnAddSite"
         android:background="#fff" />

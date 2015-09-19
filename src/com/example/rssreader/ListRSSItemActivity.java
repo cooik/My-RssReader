@@ -31,6 +31,8 @@ public class ListRSSItemActivity extends ListActivity {
 
 	RSSFeed rssFeed;
 
+	TextView webname;
+
 	private static String TAG_TITLE = "title";
 	private static String TAG_LINK = "link";
 	private static String TAG_DESRIPTION = "description";
@@ -53,6 +55,10 @@ public class ListRSSItemActivity extends ListActivity {
 		WebSite site = rssDB.getSite(site_id);
 		String rss_link = site.getRSSLink();
 
+		webname = (TextView) findViewById(R.id.webname);
+
+		webname.setText(site.getTitle());
+
 		new loadRSSFeedItems().execute(rss_link);
 
 		ListView lv = getListView();
@@ -67,9 +73,12 @@ public class ListRSSItemActivity extends ListActivity {
 						DisPlayWebPageActivity.class);
 				String page_url = ((TextView) view.findViewById(R.id.page_url))
 						.getText().toString();
+				String article_title = ((TextView) view
+						.findViewById(R.id.title)).getText().toString();
 				Toast.makeText(getApplicationContext(), page_url,
 						Toast.LENGTH_SHORT).show();
 				in.putExtra("page_url", page_url);
+				in.putExtra("article_title", article_title);
 				startActivity(in);
 			}
 

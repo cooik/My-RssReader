@@ -2,13 +2,20 @@ package com.example.rssreader;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
+import android.view.View.OnClickListener;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.TextView;
 
 public class DisPlayWebPageActivity extends Activity {
 	WebView webview;
+	TextView articletitle;
+	Button button;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +25,26 @@ public class DisPlayWebPageActivity extends Activity {
 		setContentView(R.layout.webview);
 
 		Intent in = getIntent();
-		String page_url = in.getStringExtra("page_url");
+		final String page_url = in.getStringExtra("page_url");
+		String article_title = in.getStringExtra("article_title");
+
+		articletitle = (TextView) findViewById(R.id.articletitle);
+		articletitle.setText(article_title);
+
+		button = (Button) findViewById(R.id.openinbrower);
+
+		button.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent();
+				intent.setAction("android.intent.action.VIEW");
+				Uri url = Uri.parse(page_url);
+				intent.setData(url);
+				startActivity(intent);
+			}
+		});
 
 		webview = (WebView) findViewById(R.id.webpage);
 

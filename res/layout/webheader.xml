@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/weblayoutHeader"
+    android:layout_width="fill_parent"
+    android:layout_height="50dip"
+    android:layout_alignParentTop="true"
+    android:background="@drawable/header_gradient"
+    android:orientation="horizontal" >
+
+    <!-- article title -->
+
+    <TextView
+        android:id="@+id/articletitle"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_weight="7"
+        android:ems="15"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:textColor="#fff"
+        android:textSize="10sp"
+        android:textStyle="bold" />
+
+    <!-- Brower Button -->
+
+    <Button
+        android:id="@+id/openinbrower"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_weight="3"
+        android:background="@null"
+        android:text="Open"
+        android:textColor="#fff"
+        android:textSize="10sp" />
+
+</LinearLayout>
